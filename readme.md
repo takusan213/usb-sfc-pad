@@ -52,7 +52,9 @@ Maybe Recalbox and RetroPie install it automatically.
 
 # Manufacturing
 To make a PCB you need to download the zipped gerber files and upload them to a PCB manufacturer like AllPCB.  
-When you order the PCB, it is better to select "gold-plating" option. No other options are needed.
+When you order the PCB, it is better to select "gold-plating" option so that conduction between pads of the PCB and rubber buttons of SFC controller keep well.  
+...Having said that, I also manufactured a "tin-plating" version and it just work in the beggining:clock1:  
+(I sometimes felt that the "tin-plating" version didn't response.)
  
 ## Important
 This PCB is designed for Super Famicon(SFC) and I have not check if this PCB fit for Super Nintendo(SNES):relieved:  
