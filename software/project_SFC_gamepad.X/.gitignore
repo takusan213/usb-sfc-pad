@@ -1,4 +1,6 @@
 /debug
 /build
 /dist
-/nbproject
+/nbproject/*
+!/nbproject/configurations.xml
+!/nbproject/project.xml
