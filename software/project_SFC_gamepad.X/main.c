@@ -48,7 +48,7 @@ MAIN_RETURN main(void)
     /* enabling internal pull up*/
     OPTION_REGbits.nWPUEN = 0;
     WPUA = 0x30;
-    WPUB = 0xf0;
+    WPUB = 0xd0;
     
     /* all ports used as degital ports.*/
     ANSELA = 0x00;
