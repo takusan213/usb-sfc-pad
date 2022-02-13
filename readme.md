@@ -23,6 +23,7 @@ Though you need to use a driver and a soldering iron, it is fun and worth a try.
 
 # Tested OS
 - Windows 10
+- Windows 11
 - Raspberry PI 3
     - Raspberry Pi OS 
     - Recalbox for RASPBERRY PI 3
