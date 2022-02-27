@@ -5,7 +5,7 @@ This project remakes your memorable SFC(SNES) Controller into a usb gamepad:vide
 Let's make a USB SFC Gamepad and play retro games as well as recent games distributed on Steam. 
 
 There is a Japanese support page in my website:crossed_flags:  
-https://geekyfab.com/sfc_gamepad  
+https://geekyfab.com/support_sfc_gamepad  
 You can read more details there.   
 
 You can also see the making process in my blog :relaxed:  
