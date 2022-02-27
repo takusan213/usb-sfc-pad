@@ -1,6 +1,10 @@
 # Firmware
+The original firmware is /dist/default/production/project_SFC_gamepad.X.production.hex.  
+You can just write it to your USB SFC gamepad and then play your game :video_game:  
+
 This firmware using [Microchip Libraries for Applications (MLA)](https://www.microchip.com/en-us/tools-resources/develop/libraries/microchip-libraries-for-applications) provided by Microchip Technology Inc.  
-You probably need to install [MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide) to customize and build the firmware.  
+You probably need to install [MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide) to customize and build your firmware.  
+
 
 ## License
 Most of the souce code of MLA are provided under Apache Licence 2.0.  
