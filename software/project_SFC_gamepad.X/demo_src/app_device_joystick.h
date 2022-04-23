@@ -47,16 +47,16 @@ typedef union _INTPUT_CONTROLS_TYPEDEF
     {
         struct
         {
-            uint8_t y:1;
-            uint8_t b:1;
             uint8_t a:1;
+            uint8_t b:1;
             uint8_t x:1;
+            uint8_t y:1;
             uint8_t L1:1;
             uint8_t R1:1;
-            uint8_t L2:1;
-            uint8_t R2:1;//            
             uint8_t select:1;
             uint8_t start:1;
+            uint8_t L2:1;
+            uint8_t R2:1;//            
             uint8_t left_stick:1;
             uint8_t right_stick:1;
             uint8_t home:1;
