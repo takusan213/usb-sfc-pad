@@ -21,7 +21,7 @@ You order your PCB with the gerber data, buy the materials on BOM, burn the firm
 Though you need to use a driver and a soldering iron, it is fun and worth a try.
 
 
-# Tested OS
+# Tested OS / hardware
 - Windows 10
 - Windows 11
 - Raspberry PI 3
@@ -32,6 +32,7 @@ Though you need to use a driver and a soldering iron, it is fun and worth a try.
     - Raspberry Pi OS
     - Recalbox for RASPBERRY PI 4/400
     - RetroPie 4.7.1 for RASPBERRY PI 4/400
+- Retro Freak
 
 # Usage
 ## Windows

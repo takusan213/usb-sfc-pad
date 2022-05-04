@@ -57,9 +57,9 @@ typedef union _INTPUT_CONTROLS_TYPEDEF
             uint8_t start:1;
             uint8_t L2:1;
             uint8_t R2:1;//            
-            uint8_t left_stick:1;
-            uint8_t right_stick:1;
             uint8_t home:1;
+            uint8_t right_stick:1;
+            uint8_t left_stick:1;
             uint8_t :3;    //filler            
         } buttons;
         struct
