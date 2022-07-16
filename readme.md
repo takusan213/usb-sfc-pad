@@ -1,7 +1,7 @@
 # USB SFC Gamepad
  ![製品写真3](https://user-images.githubusercontent.com/78714269/151991705-4f58a10f-a0a4-4fc8-8b47-8920b3d9fc80.jpg)
 
-This project remakes your memorable SFC(SNES) Controller into a usb gamepad:video_game:  
+This project remakes your memorable SFC(or SNES) Controller into a usb gamepad:video_game:  
 Let's make a USB SFC Gamepad and play retro games as well as recent games distributed on Steam. 
 
 There is a Japanese support page in my website:crossed_flags:  
@@ -59,10 +59,6 @@ When you order the PCB, it is better to select "gold-plating" option so that con
 ...Having said that, I also manufactured a "tin-plating" version and it just work in the beggining:clock1:  
 (I sometimes felt that the "tin-plating" version didn't response.)
  
-## Important
-This PCB is designed for Super Famicon(SFC) and I have not check if this PCB fit for Super Nintendo(SNES):relieved:  
-If you live where you have played with SNES and make your USB SFC Gamepad, please let me know this PCB fit for SNES or not. 
-
 # Assembly
 1. Remove the screws and uncover the SFC controller.  
 ![kumitate1](https://user-images.githubusercontent.com/78714269/148643611-9e5495f5-19eb-48d6-86ff-410a38d8df4c.png)  
