@@ -174,17 +174,17 @@ void App_DeviceGamepadAct(INPUT_CONTROLS* gamepad_input){
 void ChangeSWMode_Button_Start(void){
     uint16_t cnt_timer =0;
     
-    if (BUTTON_IsPressed(BUTTON_START)){
+    if (BUTTON_IsPressed(BUTTON_START)&&BUTTON_IsPressed(BUTTON_TR)){
         INTCONbits.TMR0IF = 0;          // reset timer0 interrupt flag
         TMR0bits.TMR0 = (uint8_t)5;
         cnt_timer = 0;
-        while(BUTTON_IsPressed(BUTTON_START)){
+        while(BUTTON_IsPressed(BUTTON_START)&&BUTTON_IsPressed(BUTTON_TR)){
             if(INTCONbits.TMR0IF){          // INTCONbits.TMR0IF happens every 4ms
                 cnt_timer++;
-                if(cnt_timer >=500){        // 2s
+                if(cnt_timer >=250){        // 2s
                     flags.sw_flag = ~(flags.sw_flag);
                     cnt_timer =0;
-                    while(BUTTON_IsPressed(BUTTON_START));
+                    while(BUTTON_IsPressed(BUTTON_START)&&BUTTON_IsPressed(BUTTON_TR));
                 }
                 INTCONbits.TMR0IF = 0;
                 TMR0bits.TMR0 = (uint8_t)5;
@@ -198,21 +198,21 @@ void ChangeSWMode_Button_Start(void){
 void ChangeSWMode_Button_Select(void){
     uint16_t cnt_timer =0;
     
-    if (BUTTON_IsPressed(BUTTON_SELECT)){
+    if (BUTTON_IsPressed(BUTTON_START)&&BUTTON_IsPressed(BUTTON_TL)){
         INTCONbits.TMR0IF = 0;          // reset timer0 interrupt flag
         TMR0bits.TMR0 = (uint8_t)5;
         cnt_timer = 0;
-        while(BUTTON_IsPressed(BUTTON_SELECT)){
+        while(BUTTON_IsPressed(BUTTON_START)&&BUTTON_IsPressed(BUTTON_TL)){
             if(INTCONbits.TMR0IF){          // INTCONbits.TMR0IF happens every 4ms
                 cnt_timer++;
-                if(cnt_timer >=500){        // 2s
+                if(cnt_timer >=250){        // 2s
                     switch(flags.crosskey_flag){
                         case 0: flags.crosskey_flag =1; break;
                         case 1: flags.crosskey_flag =2; break;
                         case 2: flags.crosskey_flag =0; break;
                     }
                     cnt_timer =0;
-                    while(BUTTON_IsPressed(BUTTON_SELECT));
+                    while(BUTTON_IsPressed(BUTTON_START)&&BUTTON_IsPressed(BUTTON_TL));
                 }
                 INTCONbits.TMR0IF = 0;
                 TMR0bits.TMR0 = (uint8_t)5;
