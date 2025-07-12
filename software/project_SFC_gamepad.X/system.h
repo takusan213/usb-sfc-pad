@@ -22,7 +22,7 @@ please contact mla_licensing@microchip.com
 
 #include <xc.h>
 #include <stdbool.h>
-
+#include "mcc_generated_files/nvm/nvm.h"
 #include "buttons.h"
 
 #include "io_mapping.h"

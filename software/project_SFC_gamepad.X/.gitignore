@@ -9,3 +9,9 @@
 /dist/default/production/*
 !/dist/default/production/*.hex
 
+*.md
+!readme.md
+
+*.mc3
+*.json
+

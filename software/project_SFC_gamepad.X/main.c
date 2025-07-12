@@ -28,6 +28,7 @@ please contact mla_licensing@microchip.com
 
 #include "usb.h"
 #include "usb_device_hid.h"
+#include "mcc_generated_files/system/system.h"
 
 #include "app_device_joystick.h"
 

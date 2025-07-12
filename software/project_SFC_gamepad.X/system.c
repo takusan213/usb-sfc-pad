@@ -87,6 +87,7 @@ please contact mla_licensing@microchip.com
 ********************************************************************/
 void SYSTEM_Initialize( SYSTEM_STATE state )
 {
+    NVM_Initialize();
     switch(state)
     {
         case SYSTEM_STATE_USB_START:
