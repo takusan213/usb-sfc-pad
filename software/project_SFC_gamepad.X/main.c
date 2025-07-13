@@ -28,9 +28,9 @@ please contact mla_licensing@microchip.com
 
 #include "usb.h"
 #include "usb_device_hid.h"
-#include "mcc_generated_files/system/system.h"
 
 #include "app_device_joystick.h"
+#include "mapping.h"
 
 
 
@@ -40,6 +40,9 @@ MAIN_RETURN main(void)
 
     USBDeviceInit();
     USBDeviceAttach();
+    
+    // Load button-to-usage mapping from High-Endurance Flash
+    Mapping_Load();
 
     /* set all ports input*/
     TRISA = 0x30;

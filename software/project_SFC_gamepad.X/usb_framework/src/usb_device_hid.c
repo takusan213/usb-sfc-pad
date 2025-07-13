@@ -44,6 +44,7 @@ please contact mla_licensing@microchip.com
 #include "usb_config.h"
 #include "usb.h"
 #include "usb_device_hid.h"
+#include "demo_src/hid_rpt_map.h"
 
 #if defined(__XC8)
     #define PACKED
@@ -161,7 +162,8 @@ extern const struct{uint8_t report[HID_RPT01_SIZE];}hid_rpt01;
 void USBCheckHIDRequest(void)
 {
     if(SetupPkt.Recipient != USB_SETUP_RECIPIENT_INTERFACE_BITFIELD) return;
-    if(SetupPkt.bIntfID != HID_INTF_ID) return;
+    // Allow Interface 0 and Interface 1 (HID_INTF_ID = 0)
+    if(SetupPkt.bIntfID > 1) return;
 
     /*
      * There are two standard requests that hid.c may support.
@@ -175,19 +177,40 @@ void USBCheckHIDRequest(void)
             case DSC_HID: //HID Descriptor
                 if(USBActiveConfiguration == 1)
                 {
-                    USBEP0SendROMPtr(
-                        (const uint8_t*)&configDescriptor1 + 18,		//18 is a magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
-                        sizeof(USB_HID_DSC)+3,
-                        USB_EP0_INCLUDE_ZERO);
+                    if(SetupPkt.bIntfID == 0) {
+                        // Interface 0 - GamePad HID descriptor
+                        USBEP0SendROMPtr(
+                            (const uint8_t*)&configDescriptor1 + 18,		//18 is a magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
+                            sizeof(USB_HID_DSC)+3,
+                            USB_EP0_INCLUDE_ZERO);
+                    }
+                    else if(SetupPkt.bIntfID == 1) {
+                        // Interface 1 - Mapping Feature HID descriptor
+                        USBEP0SendROMPtr(
+                            (const uint8_t*)&configDescriptor1 + 45,		// offset from start of the configuration descriptor to the start of the second HID descriptor
+                            sizeof(USB_HID_DSC)+3,
+                            USB_EP0_INCLUDE_ZERO);
+                    }
                 }
                 break;
             case DSC_RPT:  //Report Descriptor
                 //if(USBActiveConfiguration == 1)
                 {
-                    USBEP0SendROMPtr(
-                        (const uint8_t*)&hid_rpt01,
-                        HID_RPT01_SIZE,     //See usbcfg.h
-                        USB_EP0_INCLUDE_ZERO);
+                    // Handle different interfaces - check which interface is requesting the descriptor
+                    if(SetupPkt.bIntfID == 0) {
+                        // Interface 0 - GamePad report descriptor
+                        USBEP0SendROMPtr(
+                            (const uint8_t*)&hid_rpt01,
+                            HID_RPT01_SIZE,     //See usbcfg.h
+                            USB_EP0_INCLUDE_ZERO);
+                    }
+                    else if(SetupPkt.bIntfID == 1) {
+                        // Interface 1 - Mapping Feature report descriptor
+                        USBEP0SendROMPtr(
+                            (const uint8_t*)&hid_map_rpt,
+                            HID_MAP_RPT_DESC_SIZE,     //See usbcfg.h (ディスクリプタサイズ指定用途)
+                            USB_EP0_INCLUDE_ZERO);
+                    }
                 }
                 break;
             case DSC_PHY:  //Physical Descriptor
