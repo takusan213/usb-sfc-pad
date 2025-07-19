@@ -19,8 +19,8 @@ enum {
     PHYS_BTN_Y = 3,      // Y
     PHYS_BTN_L = 4,      // L(TL)
     PHYS_BTN_R = 5,      // R(TR)
-    PHYS_BTN_START = 6,  // Start
-    PHYS_BTN_SELECT = 7  // Select
+    PHYS_BTN_SELECT = 6,  // Select
+    PHYS_BTN_START = 7   // Start
 };
 
 /**
